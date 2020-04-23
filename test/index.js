@@ -1,6 +1,7 @@
 const chai = require('chai');
 const chaiSpies = require('chai-spies');
 const five = require('five');
+// const 
 
 chai.use(chaiSpies);
 
@@ -8,10 +9,10 @@ const lib = require('../lib');
 
 const expect = chai.expect;
 
-describe('lib', () => {
-  afterEach(() => {
-    console.log.reset && console.log.reset();
-  });
+describe ('lib', () => {
+  // afterEach(() => {
+  //   console.log.reset && console.log.reset();
+  // });
 
   it('logs the result of calling helloFlatiron()', () => {
     const spy = chai.spy.on(console, 'log');
@@ -30,5 +31,7 @@ describe('lib', () => {
     expect(spy).to.have.been.called.with(
       `High ${five.loud()}! ${five.upHigh()}`
     );
+    console.log.reset();
   });
+
 });
